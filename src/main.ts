@@ -11,7 +11,7 @@ async function bootstrap() {
   }
 
   if(process.env.API === 'PROD') {
-    await app.listen(process.env.PORT);
+    await app.listen(3001);
   }
 }
 bootstrap();
