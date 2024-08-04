@@ -8,7 +8,6 @@ export class Mailservice {
   constructor(private readonly mailerService: MailerService, private configService: ConfigService) {}
 
   async send( dto: SendMailDto ) {
-
     const sent = await this.mailerService.sendMail({
       from: dto.email,
       to: this.configService.get('EMAIL'),
@@ -19,7 +18,8 @@ export class Mailservice {
         address: dto.address,
         mobile: dto.mobile,
         email: dto.email,
-        service: dto.service
+        service: dto.service,
+        tor: dto.tor
       }
     })
 
